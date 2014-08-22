@@ -50,7 +50,8 @@ public class FXMLController implements Initializable {
             CustomerMediaJpaController jpa = new CustomerMediaJpaController();
             CustomerMedia cm;
             cm = new CustomerMedia(werte[1]);
-            jpa.create(cm);
+            if (jpa.findCustomerMediaByTag(cm.getTag()).isEmpty())
+                jpa.create(cm);
             for (String wert : werte) {
                 System.out.println(wert);
             }

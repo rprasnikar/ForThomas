@@ -126,6 +126,17 @@ public class CustomerMediaJpaController implements Serializable {
             em.close();
         }
     }
+    
+        public List<CustomerMedia> findCustomerMediaByTag(String tag) {
+        EntityManager em = getEntityManager();
+        try {
+            Query q = java.beans.Beans.isDesignTime() ? null : em.createNamedQuery("CustomerMedia.findByTag", CustomerMedia.class);
+            q.setParameter("tag", tag);
+            return q.getResultList();
+        } finally {
+            em.close();
+        }
+    }
 
     public int getCustomerMediaCount() {
         EntityManager em = getEntityManager();

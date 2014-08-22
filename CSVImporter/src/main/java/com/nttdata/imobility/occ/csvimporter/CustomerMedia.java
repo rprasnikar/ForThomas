@@ -11,12 +11,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 /**
  *
  * @author Robert
  */
 @Entity
+@Table(name = "CustomerMedia")
+@NamedQueries({
+    @NamedQuery(name = "CustomerMedia.findByTag", query = "SELECT b FROM CustomerMedia b where b.tag = :tag"),
+    })
 public class CustomerMedia implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
