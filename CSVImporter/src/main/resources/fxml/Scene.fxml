@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="apane" prefHeight="394.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nttdata.imobility.occ.csvimporter.FXMLController">
+    <children>
+        <Button fx:id="button" layoutX="323.0" layoutY="346.0" onAction="#handleButtonAction" text="Click Me!" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Pane layoutX="15.0" layoutY="50.0" prefHeight="311.0" prefWidth="228.0">
+         <children>
+            <TextField fx:id="eingabe" layoutX="26.0" layoutY="44.0" />
+         </children>
+      </Pane>
+      <BorderPane fx:id="borderPane" layoutX="195.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0" />
+    </children>
+</AnchorPane>
