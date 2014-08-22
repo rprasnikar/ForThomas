@@ -39,6 +39,7 @@ public class FXMLController implements Initializable {
 //        String text = eingabe.getText();
         CSVReaderController c = new CSVReaderController();
         System.out.println("Pfad + Filename: " + ifile.getAbsolutePath());
+        eingabe.setText(ifile.getAbsolutePath());
         c.setFilename(ifile.getAbsolutePath());
         c.setupReader();
         List<String[]> l = c.runReader();
