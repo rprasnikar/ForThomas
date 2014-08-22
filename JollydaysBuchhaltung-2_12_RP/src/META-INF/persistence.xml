@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="JollydaysBuchhaltungPUJollydays" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>at.jollydays.booking.bo.BuhaProperties</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceItems</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceCategory</class>
+    <class>at.jollydays.booking.bo.BuhaArea</class>
+    <class>at.jollydays.booking.bo.BuhaBooking</class>
+    <class>at.jollydays.booking.bo.BuhaFilter</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceCountry</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceEvents</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceOrganiser</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceUser2event</class>
+    <class>at.jollydays.booking.bo.BuhaRabatt</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceSaleschannelinvoice</class>
+    <class>at.jollydays.booking.bo.BuhaKostl</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceAddress</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceArrangement</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceArrangementCity</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceState</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceEventsArrangementCities</class>
+    <class>at.jollydays.booking.bo.Address</class>
+    <class>at.jollydays.booking.bo.BHstatus</class>
+    <class>at.jollydays.booking.bo.BuhaArea</class>
+    <class>at.jollydays.booking.bo.BuhaBooking</class>
+    <class>at.jollydays.booking.bo.BuhaFilter</class>
+    <class>at.jollydays.booking.bo.BuhaProperties</class>
+    <class>at.jollydays.booking.bo.CooperationAddress</class>
+    <class>at.jollydays.booking.bo.CooperationInvoice</class>
+    <class>at.jollydays.booking.bo.CooperationInvoiceItem</class>
+    <class>at.jollydays.booking.bo.CreditNode</class>
+    <class>at.jollydays.booking.bo.CreditNodeAggregation</class>
+    <class>at.jollydays.booking.bo.EPESconversion</class>
+    <class>at.jollydays.booking.bo.FFstatus</class>
+    <class>at.jollydays.booking.bo.Invoice</class>
+    <class>at.jollydays.booking.bo.InvoiceItem</class>
+    <class>at.jollydays.booking.bo.InvoiceStatus</class>
+    <class>at.jollydays.booking.bo.ItemStatus</class>
+    <class>at.jollydays.booking.bo.OrderTypes</class>
+    <class>at.jollydays.booking.bo.OrganiserAddress</class>
+    <class>at.jollydays.booking.bo.OrganiserInvoice</class>
+    <class>at.jollydays.booking.bo.OrganiserInvoiceItem</class>
+    <class>at.jollydays.booking.bo.Partner</class>
+    <class>at.jollydays.booking.bo.PaymentStatusChange</class>
+    <class>at.jollydays.booking.bo.InvoiceSingle</class>
+    <class>at.jollydays.booking.bo.InvoiceItemHistory</class>
+    <class>at.jollydays.booking.bo.PaymentTypes</class>
+    <class>at.jollydays.booking.bo.NukeMrcommerceHistory</class>
+    <class>at.jollydays.booking.bo.VNukeCooperationDeliverynoteCounts</class>
+    <class>at.jollydays.booking.bo.VNukeCooperationDeliverynoteDetails</class>
+    <class>at.jollydays.booking.bo.NukeCooperationDeliverynoteAdditionalfields</class>
+    <class>at.jollydays.booking.bo.NukeCooperationBase</class>
+    <class>at.jollydays.booking.bo.NukeCooperationInvoiceDetails</class>
+    <class>at.jollydays.booking.bo.BMDPaymentInfo</class>
+    <validation-mode>NONE</validation-mode>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://extern.jollydays.at:3306/jollydays_dev?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="12jd;!56"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="eclipselink.id-validation" value="NULL"/>
+    </properties>
+  </persistence-unit>
+</persistence>

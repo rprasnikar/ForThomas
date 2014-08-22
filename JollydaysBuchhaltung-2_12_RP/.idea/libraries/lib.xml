@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/eclipselink-2.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.persistence_2.0.3.v201010191057.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/eclipselink-javax.persistence-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pop3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imap.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/smtp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/AbsoluteLayout.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/beansbinding-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.13-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mailapi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dsn.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.6-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/swing-worker-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/eclipselink-2.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/appframework-1.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/eclipselink-2.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javacsv.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
