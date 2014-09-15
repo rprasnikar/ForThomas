@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="controller"
+		class="at.prasnikar.robert.springloaddataapp.controller.manufacturerControllerImpl">
+            <property name="manufacturerService" ref="service" />
+	</bean>
+        
+        <bean id="service"
+		class="at.prasnikar.robert.springloaddataapp.service.manufacturerServiceImpl">
+            <property name="manufacturerDao" ref="dao" />
+	</bean>
+        
+        <bean id="dao" class="at.prasnikar.robert.springloaddataapp.dao.manufacturerDaoImpl" />    
+
+
+</beans>

@@ -7,6 +7,7 @@
 package at.prasnikar.robert.springloaddataapp.dao;
 
 import at.prasnikar.robert.springloaddataapp.domain.manufacturer;
+import java.util.Collection;
 
 /**
  *
@@ -16,4 +17,6 @@ public interface manufacturerDao {
     manufacturer getManufacturer(Long id);
     
     boolean createManufacturer(manufacturer m);
+
+    public Collection<manufacturer> getAll();
 }

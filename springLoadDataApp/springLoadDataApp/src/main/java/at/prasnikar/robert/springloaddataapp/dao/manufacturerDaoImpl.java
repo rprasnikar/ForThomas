@@ -7,6 +7,7 @@
 package at.prasnikar.robert.springloaddataapp.dao;
 
 import at.prasnikar.robert.springloaddataapp.domain.manufacturer;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 /**
@@ -26,6 +27,17 @@ public class manufacturerDaoImpl implements manufacturerDao {
         manufacturers.put(m.getId(), m); //To change body of generated methods, choose Tools | Templates.
         return true;
     }
+
+    public manufacturerDaoImpl() {
+        System.out.println("init manufacturerDaoImpl.");
+    }
+
+    @Override
+    public Collection<manufacturer> getAll() {
+        return manufacturers.values();//To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
     
 }

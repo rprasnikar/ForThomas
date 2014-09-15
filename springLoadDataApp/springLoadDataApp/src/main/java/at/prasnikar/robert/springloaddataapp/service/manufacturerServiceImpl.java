@@ -8,6 +8,8 @@ package at.prasnikar.robert.springloaddataapp.service;
 
 import at.prasnikar.robert.springloaddataapp.dao.manufacturerDao;
 import at.prasnikar.robert.springloaddataapp.domain.manufacturer;
+import java.util.Collection;
+import java.util.Iterator;
 import lombok.Data;
 
 /**
@@ -27,5 +29,27 @@ public class manufacturerServiceImpl implements manufacturerService{
     public manufacturer getManufacturer(Long id) {
         return manufacturerDao.getManufacturer(id); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public void setManufacturerDao(manufacturerDao md) {
+        this.manufacturerDao = md;
+    }
+
+    public manufacturerServiceImpl() {
+        System.out.println("init manufacturerServiceImpl.");
+    }
+
+    @Override
+    public void print() {
+        Collection<manufacturer> c = manufacturerDao.getAll();
+        manufacturer m;
+        System.out.println("starte Iterator...");
+        Iterator i = c.iterator();
+        while (i.hasNext()) {
+            m = (manufacturer) i.next();
+            System.out.println(m.toString() + " " + m.getManufacturerName());
+        }//To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
 }

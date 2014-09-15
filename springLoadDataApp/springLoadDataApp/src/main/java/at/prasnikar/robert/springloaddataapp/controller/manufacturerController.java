@@ -4,18 +4,19 @@
  * and open the template in the editor.
  */
 
-package at.prasnikar.robert.springloaddataapp.service;
+package at.prasnikar.robert.springloaddataapp.controller;
 
 import at.prasnikar.robert.springloaddataapp.domain.manufacturer;
-
-
+import at.prasnikar.robert.springloaddataapp.service.manufacturerService;
 
 /**
  *
  * @author Robert
  */
-public interface manufacturerService {
-    Boolean createManufacturer(manufacturer m);
-    manufacturer getManufacturer(Long id);
+public interface manufacturerController {
+    manufacturerService getManufacturerService();
+    
+    boolean add(manufacturer m);
+    
     void print();
 }
