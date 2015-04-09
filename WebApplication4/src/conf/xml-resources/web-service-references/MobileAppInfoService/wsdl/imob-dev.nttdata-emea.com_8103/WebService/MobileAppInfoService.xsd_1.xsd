@@ -1,0 +1,471 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.7-b01  svn-revision#13316. --><xs:schema xmlns:tns="http://mobile.nttdata.at/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://mobile.nttdata.at/">
+
+<xs:element name="getAllChargingServiceUrls" type="tns:getAllChargingServiceUrls"/>
+
+<xs:element name="getAllChargingServiceUrlsResponse" type="tns:getAllChargingServiceUrlsResponse"/>
+
+<xs:element name="getAvailableVehicles" type="tns:getAvailableVehicles"/>
+
+<xs:element name="getAvailableVehiclesResponse" type="tns:getAvailableVehiclesResponse"/>
+
+<xs:element name="getChargingServiceUrl" type="tns:getChargingServiceUrl"/>
+
+<xs:element name="getChargingServiceUrlResponse" type="tns:getChargingServiceUrlResponse"/>
+
+<xs:element name="getChargingStation" type="tns:getChargingStation"/>
+
+<xs:element name="getChargingStationResponse" type="tns:getChargingStationResponse"/>
+
+<xs:element name="getChargingStations" type="tns:getChargingStations"/>
+
+<xs:element name="getChargingStationsResponse" type="tns:getChargingStationsResponse"/>
+
+<xs:element name="getChargingStationsV2" type="tns:getChargingStationsV2"/>
+
+<xs:element name="getChargingStationsV2Response" type="tns:getChargingStationsV2Response"/>
+
+<xs:element name="getClusterMaxPower" type="tns:getClusterMaxPower"/>
+
+<xs:element name="getClusterMaxPowerResponse" type="tns:getClusterMaxPowerResponse"/>
+
+<xs:element name="getConnectorMaxPower" type="tns:getConnectorMaxPower"/>
+
+<xs:element name="getConnectorMaxPowerResponse" type="tns:getConnectorMaxPowerResponse"/>
+
+<xs:element name="getReservationAuthorizations" type="tns:getReservationAuthorizations"/>
+
+<xs:element name="getReservationAuthorizationsResponse" type="tns:getReservationAuthorizationsResponse"/>
+
+<xs:element name="getStationMaxPower" type="tns:getStationMaxPower"/>
+
+<xs:element name="getStationMaxPowerResponse" type="tns:getStationMaxPowerResponse"/>
+
+<xs:element name="getVehicleData" type="tns:getVehicleData"/>
+
+<xs:element name="getVehicleDataResponse" type="tns:getVehicleDataResponse"/>
+
+<xs:element name="getVehiclePools" type="tns:getVehiclePools"/>
+
+<xs:element name="getVehiclePoolsResponse" type="tns:getVehiclePoolsResponse"/>
+
+<xs:element name="getVehicleProviders" type="tns:getVehicleProviders"/>
+
+<xs:element name="getVehicleProvidersResponse" type="tns:getVehicleProvidersResponse"/>
+
+<xs:element name="getVehicleReservations" type="tns:getVehicleReservations"/>
+
+<xs:element name="getVehicleReservationsResponse" type="tns:getVehicleReservationsResponse"/>
+
+<xs:complexType name="getVehiclePools">
+<xs:sequence>
+<xs:element name="providerName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehiclePoolsResponse">
+<xs:sequence>
+<xs:element name="getVehiclePools" type="tns:vehiclePoolData" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vehiclePoolData">
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="provider" type="xs:string"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="carCount" type="xs:int" minOccurs="0"/>
+<xs:element name="address" type="tns:address" minOccurs="0"/>
+<xs:element name="longitude" type="xs:double" minOccurs="0"/>
+<xs:element name="latitude" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="address">
+<xs:sequence>
+<xs:element name="country" type="xs:string"/>
+<xs:element name="zipCode" type="xs:string"/>
+<xs:element name="city" type="xs:string"/>
+<xs:element name="street" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleData">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getVehicleDataResponse">
+<xs:sequence>
+<xs:element name="vehicleData" type="tns:vehicleData" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vehicleData">
+<xs:sequence>
+<xs:element name="energyCapacityWh" type="xs:int" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="manufacturer" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleReservations">
+<xs:sequence>
+<xs:element name="boxId" type="xs:string"/>
+<xs:element name="fromdate" type="xs:dateTime"/>
+<xs:element name="todate" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleReservationsResponse">
+<xs:sequence>
+<xs:element name="getVehicleReservations" type="tns:vehicleReservationData" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vehicleReservationData">
+<xs:sequence>
+<xs:element name="provider" type="xs:string"/>
+<xs:element name="pool" type="xs:string"/>
+<xs:element name="validfrom" type="xs:dateTime"/>
+<xs:element name="validto" type="xs:dateTime"/>
+<xs:element name="implicit" type="xs:boolean"/>
+<xs:element name="boxId" type="xs:string"/>
+<xs:element name="fullTag" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStationMaxPower">
+<xs:sequence>
+<xs:element name="cpo" type="tns:chargingStationProvider" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargingStationProvider">
+<xs:sequence>
+<xs:element name="countryCode" type="xs:string"/>
+<xs:element name="name" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStationMaxPowerResponse">
+<xs:sequence>
+<xs:element name="maxPower" type="xs:double" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getReservationAuthorizations">
+<xs:sequence>
+<xs:element name="fullTag" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getReservationAuthorizationsResponse">
+<xs:sequence>
+<xs:element name="getReservationAuthorizations" type="tns:reservationAuthorizationData" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="reservationAuthorizationData">
+<xs:sequence>
+<xs:element name="provider" type="xs:string"/>
+<xs:element name="pool" type="xs:string"/>
+<xs:element name="fulltag" type="xs:string"/>
+<xs:element name="validfrom" type="xs:dateTime"/>
+<xs:element name="validto" type="xs:dateTime"/>
+<xs:element name="daytimevalidfrom" type="xs:string" minOccurs="0"/>
+<xs:element name="daytimevalidto" type="xs:string" minOccurs="0"/>
+<xs:element name="validonmonday" type="xs:boolean" minOccurs="0"/>
+<xs:element name="validontuesday" type="xs:boolean" minOccurs="0"/>
+<xs:element name="validonwednesday" type="xs:boolean" minOccurs="0"/>
+<xs:element name="validonthursday" type="xs:boolean" minOccurs="0"/>
+<xs:element name="validonfriday" type="xs:boolean" minOccurs="0"/>
+<xs:element name="validonsaturday" type="xs:boolean" minOccurs="0"/>
+<xs:element name="validonsunday" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChargingStationsV2">
+<xs:sequence>
+<xs:element name="filter" type="tns:filterV2" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="filterV2">
+<xs:complexContent>
+<xs:extension base="tns:filter">
+<xs:sequence>
+<xs:element name="stationKey" type="xs:string" minOccurs="0"/>
+<xs:element name="managedOnly" type="xs:boolean" minOccurs="0"/>
+<xs:element name="visibleOnly" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="filter">
+<xs:sequence>
+<xs:element name="latitude1" type="xs:double" minOccurs="0"/>
+<xs:element name="longitude1" type="xs:double" minOccurs="0"/>
+<xs:element name="latitude2" type="xs:double" minOccurs="0"/>
+<xs:element name="longitude2" type="xs:double" minOccurs="0"/>
+<xs:element name="chargingStationProvider" type="tns:chargingStationProvider" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChargingStationsV2Response">
+<xs:sequence>
+<xs:element name="chargingStationsV2" type="tns:chargingStationsResponseV2" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargingStationsResponseV2">
+<xs:sequence>
+<xs:element name="chargingStation" type="tns:chargingStationV2" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargingStationV2">
+<xs:complexContent>
+<xs:extension base="tns:chargingStation">
+<xs:sequence>
+<xs:element name="location" type="xs:string" minOccurs="0"/>
+<xs:element name="maxPower" type="xs:double" minOccurs="0"/>
+<xs:element name="protocol" type="xs:string" minOccurs="0"/>
+<xs:element name="visible" type="xs:boolean"/>
+<xs:element name="connectorsV2" type="tns:chargingStationConnectorsV2" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="chargingStation">
+<xs:sequence>
+<xs:element name="stationKey" type="xs:string"/>
+<xs:element name="latitude" type="xs:double" minOccurs="0"/>
+<xs:element name="longitude" type="xs:double" minOccurs="0"/>
+<xs:element name="address" type="tns:address" minOccurs="0"/>
+<xs:element name="provider" type="tns:chargingStationProvider"/>
+<xs:element name="owner" type="tns:chargingStationOwner" minOccurs="0"/>
+<xs:element name="connectors" type="tns:chargingStationConnectors"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargingStationConnectorsV2">
+<xs:sequence>
+<xs:element name="connector" type="tns:chargingStationConnectorDataV2" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargingStationConnectorDataV2">
+<xs:complexContent>
+<xs:extension base="tns:chargingStationConnectorData">
+<xs:sequence>
+<xs:element name="chargingMode" type="xs:string" minOccurs="0"/>
+<xs:element name="plugged" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="chargingStationConnectorData">
+<xs:sequence>
+<xs:element name="connectorKey" type="xs:int"/>
+<xs:element name="status" type="tns:ebeChargestate"/>
+<xs:element name="plugType" type="xs:string"/>
+<xs:element name="maxCurrent" type="xs:double" minOccurs="0"/>
+<xs:element name="voltage" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargingStationOwner">
+<xs:sequence>
+<xs:element name="countryCode" type="xs:string"/>
+<xs:element name="name" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargingStationConnectors">
+<xs:sequence>
+<xs:element name="connector" type="tns:chargingStationConnectorData" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllChargingServiceUrls">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllChargingServiceUrlsResponse">
+<xs:sequence>
+<xs:element name="getAllChargingServiceUrls" type="tns:serviceUrlMap" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="serviceUrlMap">
+<xs:sequence>
+<xs:element name="urlMap">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="key" minOccurs="0" type="tns:chargingStationProvider"/>
+<xs:element name="value" minOccurs="0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getClusterMaxPower">
+<xs:sequence>
+<xs:element name="cpo" type="tns:chargingStationProvider" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getClusterMaxPowerResponse">
+<xs:sequence>
+<xs:element name="maxPowerClusterList" type="tns:clusterInfoResponse" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clusterInfoResponse">
+<xs:sequence>
+<xs:element name="rootCluster" type="tns:clusterInfo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clusterInfo">
+<xs:sequence>
+<xs:element name="key" type="xs:string" minOccurs="0"/>
+<xs:element name="power" type="xs:double" minOccurs="0"/>
+<xs:element name="parentKey" type="xs:string" minOccurs="0"/>
+<xs:element name="subCluster" type="tns:clusterInfo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChargingStation">
+<xs:sequence>
+<xs:element name="stationKey" type="xs:string" minOccurs="0"/>
+<xs:element name="provider" type="tns:chargingStationProvider" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChargingStationResponse">
+<xs:sequence>
+<xs:element name="chargingStation" type="tns:chargingStation" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChargingStations">
+<xs:sequence>
+<xs:element name="filter" type="tns:filter" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChargingStationsResponse">
+<xs:sequence>
+<xs:element name="chargingStations" type="tns:chargingStationsResponse" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargingStationsResponse">
+<xs:sequence>
+<xs:element name="chargingStation" type="tns:chargingStation" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAvailableVehicles">
+<xs:sequence>
+<xs:element name="providerName" type="xs:string"/>
+<xs:element name="poolName" type="xs:string"/>
+<xs:element name="fromdate" type="xs:dateTime"/>
+<xs:element name="todate" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAvailableVehiclesResponse">
+<xs:sequence>
+<xs:element name="getAvailableVehicles" type="tns:poolVehicleData" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="poolVehicleData">
+<xs:sequence>
+<xs:element name="provider" type="xs:string"/>
+<xs:element name="pool" type="xs:string"/>
+<xs:element name="boxid" type="xs:string"/>
+<xs:element name="inservice" type="xs:boolean" minOccurs="0"/>
+<xs:element name="licenseno" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="category" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChargingServiceUrl">
+<xs:sequence>
+<xs:element name="chargingstationprovider" type="tns:chargingStationProvider"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getChargingServiceUrlResponse">
+<xs:sequence>
+<xs:element name="getChargingServiceUrl" type="xs:string" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleProviders">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getVehicleProvidersResponse">
+<xs:sequence>
+<xs:element name="getVehicleProviders" type="tns:vehicleProviderData" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vehicleProviderData">
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="active" type="xs:boolean"/>
+<xs:element name="country" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getConnectorMaxPower">
+<xs:sequence>
+<xs:element name="cpo" type="tns:chargingStationProvider" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getConnectorMaxPowerResponse">
+<xs:sequence>
+<xs:element name="maxPower" type="xs:double" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="ebeChargestate">
+<xs:restriction base="xs:string">
+<xs:enumeration value="nocharge"/>
+<xs:enumeration value="notavailable"/>
+<xs:enumeration value="charging"/>
+<xs:enumeration value="finished"/>
+<xs:enumeration value="suspended"/>
+<xs:enumeration value="fault"/>
+<xs:enumeration value="waitforcharge"/>
+<xs:enumeration value="reserved"/>
+<xs:enumeration value="unmanaged"/>
+<xs:enumeration value="chargingsuspended"/>
+<xs:enumeration value="authenticating"/>
+<xs:enumeration value="authenticationok"/>
+<xs:enumeration value="authenticationfailed"/>
+<xs:enumeration value="finishedsuspended"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

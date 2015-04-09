@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://imob-dev.nttdata-emea.com:8103/WebService/MobileAppInfoService?wsdl" uri="src/conf/xml-resources/web-service-references/MobileAppInfoService/wsdl/imob-dev.nttdata-emea.com_8103/WebService/MobileAppInfoService.wsdl"/>
+    <system systemId="https://imob-dev.nttdata-emea.com:8103/WebService/MobileAppInfoService?xsd=1" uri="src/conf/xml-resources/web-service-references/MobileAppInfoService/wsdl/imob-dev.nttdata-emea.com_8103/WebService/MobileAppInfoService.xsd_1.xsd"/>
+</catalog>
